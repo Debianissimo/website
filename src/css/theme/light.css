@@ -1,0 +1,107 @@
+/*
+     _____
+    |  ___|_ _ ___ _ __ ___    __ _  __ _
+    | |_ / _` / __| '_ ` _ \  / _` |/ _` |
+    |  _| (_| \__ \ | | | | || (_| | (_| |
+    |_|  \__,_|___/_| |_| |_(_)__, |\__,_|
+                              |___/
+
+	-> Name: light.css
+	-> Description: Charm.ga light theme for CSS
+	-> Resource: /src/css/themes/light.css
+	-> Licensing: GPLv3 | © 2022, Fasm.ga
+*/
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+
+:root {
+	--accent: #04977C;
+
+	--background-10: #E5F5F2;
+	--background-20: #D8E4F3;
+	--background-30: #C8D7E9;
+	--background-40: #BBCADD;
+	--background-50: #B1BECE;
+	--background: color-contrast(
+		var(--background-10) vs
+		var(--background-20),
+		var(--background-30),
+		var(--background-40),
+		var(--background-50)
+	);
+
+	--overlay-shadow-5: var(--background-20);
+	--overlay-shadow-10: var(--background-30);
+	--overlay-shadow-15: var(--background-40);
+
+	--foreground-10: #202B38;
+	--foreground-20: #293747;
+	--foreground-30: #324357;
+	--foreground-40: #3C4F68;
+	--foreground-50: #455C78;
+	--foreground: color-contrast(
+		var(--foreground-10) vs
+		var(--foreground-20),
+		var(--foreground-30),
+		var(--foreground-40),
+		var(--foreground-50)
+	);
+
+	--overlay-foreground-5: var(--foreground-20);
+	--overlay-foreground-10: var(--foreground-30);
+	--overlay-foreground-15: var(--foreground-40);
+
+	--charmga-accent-10: #025041;
+	--charmga-accent-20: #036352;
+	--charmga-accent-30: #037762;
+	--charmga-accent-40: #048B72;
+	--charmga-accent-50: #04977C;
+	--charmga-accent-60: #05B393;
+	--charmga-accent-70: #05C7A3;
+	--charmga-accent-80: #06DBB4;
+	--charmga-accent-90: #06EFC4;
+
+	--light-blue-10: #2B578C;
+	--light-blue-20: #2B578C;
+	--light-blue-30: #2B578C;
+	--light-blue-40: #356AAC;
+	--light-blue-50: #447EC5;
+	--light-blue-60: #639ACF;
+	--light-blue-70: #82A9D9;
+	--light-blue-80: #A1BFE2;
+	--light-blue-90: #D8E4F3;
+
+	--purple-haze-10: #3100A4;
+	--purple-haze-20: #3C00C7;
+	--purple-haze-30: #4600E9;
+	--purple-haze-40: #550DFF;
+	--purple-haze-50: #6E2FFF;
+	--purple-haze-60: #8652FF;
+	--purple-haze-30: #9E75FF;
+	--purple-haze-80: #B697FF;
+	--purple-haze-90: #CFBAFF;
+
+	--desert-red-10: #6B0F20;
+	--desert-red-20: #7D1225;
+	--desert-red-30: #8F142B;
+	--desert-red-40: #A11730;
+	--desert-red-50: #B01934;
+	--desert-red-60: #C41C3B;
+	--desert-red-70: #D61F40;
+	--desert-red-80: #E0294A;
+	--desert-red-90: #E33B5A;
+
+	--light-yellow-10: #C9A503;
+	--light-yellow-20: #DDB503;
+	--light-yellow-30: #F1C604;
+	--light-yellow-40: #FBD00E;
+	--light-yellow-50: #FCD31C;
+	--light-yellow-60: #FCD836;
+	--light-yellow-70: #FCDC4A;
+	--light-yellow-80: #FDE05E;
+	--light-yellow-90: #FDE372;
+}
+
+.accent {	color: var(--accent); }
+.primary { background-color: var(--accent); }

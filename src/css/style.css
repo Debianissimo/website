@@ -1,0 +1,431 @@
+/*
+     _____
+    |  ___|_ _ ___ _ __ ___    __ _  __ _
+    | |_ / _` / __| '_ ` _ \  / _` |/ _` |
+    |  _| (_| \__ \ | | | | || (_| | (_| |
+    |_|  \__,_|___/_| |_| |_(_)__, |\__,_|
+                              |___/
+
+	-> Name: style.css
+	-> Description: Document stylesheet for the Fasm.ga webpage.
+	-> Resource: /src/css/style.css
+	-> Licensing: GPLv3 | © 2022, Fasm.ga
+*/
+
+/*** Imports ***/
+@import url("./static.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap");
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+
+/***
+	The following rules apply to every element on the screen
+***/
+* {
+	font-family: var(--text);
+	font-size: var(--text-size);
+	text-decoration: none;
+	line-height: var(--default-line-height);
+
+	color: var(--foreground-10);
+	accent-color: var(--accent);
+
+	scroll-behavior: smooth;
+	will-change: transition;
+	transition:
+		border var(--style-animation),
+		background var(--style-animation),
+		color var(--style-animation);
+}
+
+html, body {
+	display: grid;
+
+	margin: var(--page-padding);
+	padding: var(--page-padding);
+}
+
+body
+{	background-color: var(--background-10); }
+
+.content {
+	display: grid;
+	/* Fuck it I'm gonna try them all */
+	place-self: center;
+	place-content: center;
+	place-items: center;
+}
+			
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/***
+	Styles for standard HTML elements
+***/
+a {
+	color: var(--accent);
+
+	text-decoration: var(--link-text-decoration);
+
+	will-change: transition;
+	transition: color var(--style-animation);
+}
+a:hover {
+	color: var(--charmga-accent-80);
+
+	will-change: transition;
+	transition: color var(--style-animation);
+}
+
+b,
+info::before,
+code::before,
+card::before
+{
+	font-weight: var(--bold);
+	letter-spacing: var(--bold-letter-spacing);
+}
+
+h1, .display {
+	font-family: var(--display);
+	font-size: var(--display-size);
+}
+
+h2, .headline,
+section::before,
+main > info::before,
+main > card::before
+{
+	font-family: var(--headline);
+	font-size: var(--headline-size);
+	font-weight: var(--bold);
+}
+
+h3, .subheadline,
+section[subtitle]::before {
+	font-family: var(--subheadline);
+	font-size: var(--subheadline-size);
+	font-weight: var(--bold);
+}
+
+pre,
+code {
+	font-family: var(--monospace);
+	font-size: var(--monospace-size);
+}
+
+img {
+	max-width: var(--responsive-width);
+	max-height: var(--responsive-height);
+	height: auto;
+}
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/***
+	Styles for website pages and sections, designed for fast page navigation
+***/
+section {
+	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	grid-column-gap: var(--standard-padding);
+	grid-row-gap: var(--standard-padding);
+	place-items: center;
+	place-self: center;
+
+	margin: var(--max-padding);
+	padding: var(--min-padding);
+
+	overflow: auto;
+
+	scroll-behavior: smooth;
+}
+
+main section, section:target, section:target section
+{ display: grid; }
+@supports selector(:target-within) {
+	section:target-within
+	{ display: grid; }
+}
+section:not(:target)
+{ display: none; }
+
+section::before {
+	display: block;
+	content: attr(title);
+
+	line-height: var(--title-height);
+}
+section[title]::before
+{ content: attr(title); }
+section[subtitle]::before
+{ content: attr(subtitle); }
+
+section.hidden
+{ display: none; }
+section.hidden::before
+{ display: block; }
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/***
+	Additional webpage or stylistic elements
+***/
+.logo {
+	font-family: var(--display);
+
+	color: var(--foreground-20);
+
+	will-change: transition;
+	transition: color var(--style-animation);
+}
+.logo:hover {
+	color: var(--accent);
+
+	will-change: transition;
+	transition: color var(--style-animation);
+}
+
+icon,
+nav a::before,
+button[icon]::before {
+	position: relative;
+
+	top: var(--icon-line);
+
+	font-family: var(--icon);
+	text-decoration: none;
+}
+
+icon.material,
+nav a::before,
+input[type=submit],
+button[icon]::before
+{ font-family: var(--icon); }
+
+info,
+code,
+card {
+	display: inline-block;
+
+	margin: var(--standard-padding);
+	padding: var(--max-padding);
+	z-index: var(--in-between);
+
+	max-width: var(--max-line-width);
+
+	border-radius: var(--element-corner-radius);
+	box-shadow: var(--element-shadow) var(--overlay-shadow-5);
+
+	background-color: var(--background-10);
+	color: var(--overlay-foreground-5);
+
+	overflow-wrap: break-word;
+
+	will-change: transition;
+	transition: box-shadow var(--style-animation);
+}
+info::before,
+code::before,
+card::before
+{
+	display: block;
+	content: attr(title);
+
+	padding-bottom: var(--min-padding);
+}
+
+info[type=warning]::before,
+code[type=warning]::before
+{ color: var(--light-yellow-10); }
+
+info[type=error]::before,
+code[type=error]::before
+{ color: var(--desert-red-50); }
+
+info.standWithUkraine {
+	background-color: #0057B7;
+	color: #FFD700;
+}
+info.standWithUkraine::before
+{ content: 'Standing with Ukraine'; }
+
+:is(info, code, card) button
+{ margin-top: var(--standard-padding); }
+
+card {
+	border: var(--background-30);
+	border-radius: var(--section-corner-radius);
+}
+
+header:hover,
+footer:hover,
+info:hover,
+code:hover,
+card:hover {
+	box-shadow: var(--element-shadow) var(--overlay-shadow-10);
+	will-change: transition;
+	transition: box-shadow var(--style-animation);
+}
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/***
+	Sections and semantics, parts of the webpage
+***/
+header, footer
+{
+	display: block;
+
+	padding: var(--standard-padding);
+	z-index: var(--on-top);
+
+	background-color: var(--background-10);
+
+	will-change: transition;
+	transition: box-shadow var(--style-animation);
+}
+header
+{ box-shadow: var(--section-shadow) var(--overlay-shadow-10); }
+footer
+{	box-shadow: var(--section-shadow-upward) var(--overlay-shadow-10); }
+
+nav
+{
+	padding: var(--standard-padding);
+
+	border-radius: var(--section-corner-radius);
+}
+
+nav[orientation=horizontal] {
+	display: block;
+
+	white-space: var(--no-wrap);
+
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+nav[orientation=vertical] {
+	display: inline-block;
+
+	line-height: var(--vertical-nav-padding);
+
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+header nav,
+footer nav {
+	border-radius: 0;
+
+	text-align: center;
+}
+
+/*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***//*** —————————————————— ***/
+
+/***
+	Interactive user controls: buttons, inputs and forms
+***/
+button, input[type=submit] {
+	display: inline-block;
+	vertical-align: top;
+
+	padding: var(--standard-padding);
+
+	border: none;
+	border-radius: var(--control-corner-radius);
+
+	font-size: var(--button-text-size);
+
+	background-color: var(--foreground-20);
+	color: var(--background-10);
+
+	cursor: pointer;
+
+	will-change: transition;
+	transition: padding var(--layout-animation), font-weight var(--style-animation), border-radius var(--style-animation), background-color var(--style-animation);
+}
+button
+{ font-family: var(--monospace); }
+
+button[icon]::before
+{
+	content: attr(icon);
+
+	margin-right: var(--min-padding);
+}
+
+button:hover, .button:hover, input[type=submit]:hover,
+main button, main > form input[type=submit] {
+	padding: var(--max-padding);
+
+	font-weight: var(--bold);
+
+	background-color: var(--accent);
+
+	will-change: transition;
+	transition: padding var(--layout-animation), font-weight var(--style-animation), border-radius var(--style-animation), background-color var(--style-animation);
+}
+main button:hover, main > form input[type=submit]:hover
+{ background-color: var(--charmga-accent-80); }
+
+main > form input:is([type=text], [type=url], [type=email], [type=search], [type=password])
+{ border-color: var(--accent); }
+input[type=submit] {
+	padding: var(--max-padding);
+
+	font-size: var(--icon-button-size);
+	font-weight: var(--bold);
+}
+
+input:is([type=text], [type=url], [type=email], [type=search], [type=password]) {
+	padding: var(--standard-padding);
+
+	border: var(--max-border) solid var(--foreground-20);
+	border-radius: var(--control-corner-radius);
+	outline: none;
+
+	resize: none;
+
+	font-family: var(--monospace);
+
+	background-color: var(--transparency);
+	color: var(--foreground-10);
+
+	will-change: transition;
+	transition: border var(--style-animation), font-weight var(--style-animation), color var(--style-animation);
+}
+input:is([type=text], [type=url], [type=email], [type=search], [type=password]):hover {
+	border: var(--max-border) solid var(--accent);
+
+	color: var(--accent);
+
+	transition: border var(--style-animation), font-weight var(--style-animation), color var(--style-animation);
+}
+
+nav a {
+	margin: var(--min-padding) 0;
+	padding: var(--standard-padding);
+
+	font-family: var(--monospace);
+
+	color: var(--foreground-10);
+
+	white-space: var(--no-wrap);
+
+	cursor: var(--link-cursor);
+
+	will-change: transition;
+	transition: color var(--style-animation);
+}
+nav a::before
+{ content: attr(icon); }
+nav a::after
+{ content: var(--text-spacing) attr(title); }
+@media only screen and (max-width: 800px) {
+	nav a::after {
+		display: none;
+		content: attr(title);
+	}
+}
+nav[orientation=vertical] a
+{ display: block; }

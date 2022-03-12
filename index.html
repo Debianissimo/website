@@ -1,0 +1,150 @@
+<!--
+		 _____
+		|  ___|_ _ ___ _ __ ___    __ _  __ _
+		| |_ / _` / __| '_ ` _ \  / _` |/ _` |
+		|  _| (_| \__ \ | | | | || (_| | (_| |
+		|_|  \__,_|___/_| |_| |_(_)__, |\__,_|
+									|___/
+
+	-> Name: index.html
+	-> Description: Landing page for your fga-w3 site
+	-> Resource: /index.html
+	-> Licensing: GPLv3 | © 2022, Fasm.ga
+-->
+
+<!--——————————————————--><!--——————————————————--><!--——————————————————--><!--——————————————————-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta id='charset'
+			charset="utf-8" />
+		<meta id='viewport'
+			name='viewport'
+			content="width=device-width, initial-scale=1.0" />
+		<meta id='metaData'
+			title="Fasm.ga — The FOSS URL Shortener" />
+		<title id='pageTitle'>
+			Fasm.ga
+		</title>
+	</head>
+
+	<body>
+		<script id='jquery'
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+			crossorigin="anonymous"
+		></script>
+
+		<script id='resources'
+			src="./res/index.js"
+		></script>
+		<script id='defaults'
+			src="./content/byUser/defaults.js"
+		></script>
+		<script id='usersettings'
+			src="./content/byUser/settings.js"
+		></script>
+
+		<link id='colorscheme'
+			rel='stylesheet'
+			href="./src/css/theme/dark.css" />
+		<link id='style'
+			rel='stylesheet'
+			href="./src/css/style.css" />
+
+		<link id='favicon'
+			rel='icon'
+			href="./res/raster/favicon.ico" />
+
+		<script id='utils'
+			src="./src/js/utils.js"
+		></script>
+
+		<header>
+			<nav id='navbar'
+				orientation='horizontal'
+			>
+				<a class='logo subheadline' href="/">
+					fga-w3 app
+				</a>
+				<a
+					href="#_home"
+					icon='home' title='Home'
+				></a>
+				<a
+					href="#debugging"
+					icon='developer_board' title='JS Debug'
+				></a>
+			</nav>
+		</header>
+
+		<main>
+			<section id='_home'
+				title='Welcome'
+			>
+				<main>
+					This is your fga-w3 app.
+				</main>
+				<info id='vote for me please ;-;'
+					title='Do you enjoy fga-w3?'
+				>
+					Consider <a href='https://github.com/fasmga/fga-w3'>
+						contributing on GitHub!
+					</a>
+				</info>
+				<info id='_tip1'
+					title='Tip'
+				>
+					Start editing your website to your liking!<br/>
+					<nav orientation='vertical'>
+						<a href="./index.html"
+							icon='home' title='Landing page'
+						></a>
+						<a href="./content/"
+							icon='description' title='Other pages'
+						></a>
+						<a href="./src/css/"
+							icon='css' title='CSS styles'
+						></a>
+						<a href="./src/js/index.js"
+							icon='javascript' title='Backend scripts'
+						></a>
+					</nav>
+				</info>
+			</section>
+		</main>
+		<section id='debugging'
+			title='JS Debug'
+		>
+			<main>
+				<form id='debug'>
+					<input id='repl'
+						type='text' name='repl'
+						placeholder="Input JS"
+						resizable />
+					<input id='evalrepl'
+						type='submit'
+						value='arrow_forward' />
+				</form>
+			</main>
+			<code id='result' title='Input any JS code above'>
+				// The evaluated result will be shown here.
+			</code>
+		</section>
+
+		<script id='dynamic'
+			src="./res/dynamic.js"
+		></script>
+		<script id='debugger'
+			src="./src/js/debugger.js"
+		></script>
+		<script id='main'
+			src="./src/js/index.js"
+		></script>
+		<script id='pageload'
+			src="./src/js/pageload.js"
+		></script>
+	</body>
+</html>
